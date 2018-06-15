@@ -1,11 +1,37 @@
 import React, { Component } from 'react'
-import { View , Text } from 'react-native';
+import { Container, Header, Content, Card, CardItem, Text, Body , Button } from 'native-base';
+import fire from '../config/fire';
  class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.logout = this.logout.bind(this);
+    }
+
+
+    logout() {
+        fire.auth().signOut();
+    }
   render() {
     return (
-      <View>
-          <Text> Home </Text>
-      </View>
+        <Container>
+        <Content>
+          <Card>
+            <CardItem header>
+              <Text>NativeBase</Text>
+            </CardItem>
+            <CardItem>
+              <Body>
+                
+                <Button light style={{alignSelf:'center'}} onPress={this.logout} ><Text> Logout </Text></Button>
+                
+              </Body>
+            </CardItem>
+            <CardItem footer>
+              <Text>GeekyAnts</Text>
+            </CardItem>
+         </Card>
+        </Content>
+      </Container>
     )
   }
 }
