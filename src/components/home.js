@@ -1,38 +1,34 @@
-import React, { Component } from 'react'
-import { Container, Header, Content, Card, CardItem, Text, Body , Button } from 'native-base';
-import fire from '../config/fire';
- class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.logout = this.logout.bind(this);
+import React, { Component } from 'react';
+import { DrawerNavigator } from 'react-navigation';
+import Bride from './bride';
+import Logout from './logout';
+import Invitation from './invitation';
+
+const DrawerExample = DrawerNavigator(
+    {
+        Home : {
+
+              path: '/',
+              screen : Invitation,
+        },
+        Bride : {
+
+              path:'/sent',
+              screen : Bride,
+
+        },
+        Logout : {
+
+          path:'/sent',
+          screen : Logout,
+
+        },
+    },
+    {
+          initialRouteName : 'Home',
+          drawerPosition : 'left'
+
     }
 
-
-    logout() {
-        fire.auth().signOut();
-    }
-  render() {
-    return (
-        <Container>
-        <Content>
-          <Card>
-            <CardItem header>
-              <Text>NativeBase</Text>
-            </CardItem>
-            <CardItem>
-              <Body>
-                
-                <Button light style={{alignSelf:'center'}} onPress={this.logout} ><Text> Logout </Text></Button>
-                
-              </Body>
-            </CardItem>
-            <CardItem footer>
-              <Text>GeekyAnts</Text>
-            </CardItem>
-         </Card>
-        </Content>
-      </Container>
-    )
-  }
-}
-export default Home;
+);
+export default DrawerExample;
