@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DrawerNavigator } from 'react-navigation';
+import Groom from './groom';
 import Bride from './bride';
 import Logout from './logout';
 import Invitation from './invitation';
@@ -11,6 +12,12 @@ const DrawerExample = DrawerNavigator(
               path: '/',
               screen : Invitation,
         },
+        Groom : {
+
+            path:'/sent',
+            screen : Groom,
+
+      },
         Bride : {
 
               path:'/sent',
