@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Dimensions } from 'react-native';
+var window = Dimensions.get('window');
 import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar , Title , Caption , Icon , Button , Text , Heading , Subtitle } from '@shoutem/ui';
 import fire from '../config/fire';
  class Logout extends Component {
@@ -22,12 +24,10 @@ import fire from '../config/fire';
        />
        <ScrollView>
        <ImageBackground
-           styleName="large-portrait"
+           style={{width:window.width, height:window.height}}
            source={{ uri: 'https://image.dhgate.com/0x0/f2/albu/g5/M01/99/30/rBVaJFlMxFmAFdHQAAk40j2lezE365.jpg' }}
          >
           <Tile styleName="text-centric">
-          
-            <Overlay><Heading></Heading></Overlay>
             <Title styleName="md-gutter-top">Leave us a feedback -  mvtechnologies@gmail.com</Title>
             <Subtitle styleName="line-through sm-gutter-top"></Subtitle>
             <Heading></Heading>

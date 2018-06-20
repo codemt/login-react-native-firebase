@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Image } from 'react-native';
+import { Dimensions } from 'react-native';
+var window = Dimensions.get('window');
 import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar , Title , Caption , Icon } from '@shoutem/ui';
  class Bride extends Component {
   render() {
@@ -13,7 +14,7 @@ import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar 
       />
       <ScrollView>
         <ImageBackground
-          styleName="large-portrait"
+          style={{width:window.width, height:window.height}}
           source={{ uri: 'http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2016/01/011216-what-to-wear-bridal-lead.jpg?itok=RBDEVyl8' }}
         >
           <Tile>

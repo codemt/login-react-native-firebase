@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { Text,View ,Image} from 'react-native';
-import { Container, Header, Content, Form, Item, Input , Button } from 'native-base';
+import { Text,View ,Image,Dimensions} from 'react-native';
+import { Container, Header, Content, Form, Item, Input  } from 'native-base';
+import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar , Title , Caption , Icon , Button } from '@shoutem/ui';
 import fire from '../config/fire';
+var window = Dimensions.get('window');
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -36,19 +38,26 @@ class Login extends Component {
     return (
         <Container>
         <Content>
-        <Image
-            style={{alignSelf:'center',marginTop:100}}
-          source={require('../images/logo1.jpeg')}
-        />
-          <Form style={{marginTop:50}}>
-            <Item>
-              <Input   value={this.state.email} onChangeText={email => this.setState({ email })}  ref="email" type="email" placeholder="Email" />
+        <ImageBackground
+          style={{width:window.width, height:window.height}}
+          source={{ uri: 'https://fthmb.tqn.com/p7m7ISN7eOguwsCc7_bpDfpCRnw=/2099x1429/filters:fill(auto,1)/married-588592153df78c2ccdf11fde.jpg' }}
+        >
+          <Tile style={{color:'white'}}>
+            <Overlay style={{marginTop:200,width:500}}>
+            <Form>
+            <Item style={{width:300}}>
+              <Input  style={{color:'white'}} value={this.state.email} onChangeText={email => this.setState({ email })}  ref="email" type="email" placeholder="Email" />
             </Item>
             <Item>
-              <Input  value={this.state.password} onChangeText={password => this.setState({ password })} ref="password" type="password" placeholder="Password" />
+              <Input style={{color:'white'}} value={this.state.password} onChangeText={password => this.setState({ password })} ref="password" type="password" placeholder="Password" />
             </Item>
-            <Button light style={{alignSelf:'center'}} onPress={this.login} ><Text> Login </Text></Button>
-          </Form >
+            <Button styleName="dark md-gutter-top"  light style={{alignSelf:'center',height:50,width:100}} onPress={this.login} ><Icon name="exit-to-app" /><Text>Login </Text></Button>
+          </Form>
+              
+            </Overlay>
+          </Tile>
+        </ImageBackground>
+          
          
         </Content>
        

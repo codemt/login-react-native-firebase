@@ -4,6 +4,10 @@ import Groom from './groom';
 import Bride from './bride';
 import Logout from './logout';
 import Invitation from './invitation';
+import Venue from './venue';
+import FoodMenu from './foodmenu';
+import Schedule from './timeline';
+
 
 const DrawerExample = DrawerNavigator(
     {
@@ -24,6 +28,18 @@ const DrawerExample = DrawerNavigator(
               screen : Bride,
 
         },
+        Venue : {
+
+            path:'/sent',
+            screen : Venue,
+
+      },
+      FoodMenu : {
+
+            path:'/sent',
+            screen : FoodMenu,
+
+      },
         Logout : {
 
           path:'/sent',

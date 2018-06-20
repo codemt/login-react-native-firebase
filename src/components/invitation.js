@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Image } from 'react-native';
+import {  Dimensions} from 'react-native';
+var window = Dimensions.get('window');
 import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar , Title , Caption , Icon } from '@shoutem/ui';
  class Invitation extends Component {
   render() {
@@ -13,7 +14,7 @@ import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar 
       />
       <ScrollView>
         <ImageBackground
-          styleName="large-portrait"
+          style={{width:window.width, height:window.height}}
           source={{ uri: 'https://fthmb.tqn.com/p7m7ISN7eOguwsCc7_bpDfpCRnw=/2099x1429/filters:fill(auto,1)/married-588592153df78c2ccdf11fde.jpg' }}
         >
           <Tile>

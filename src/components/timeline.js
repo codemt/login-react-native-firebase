@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Dimensions } from 'react-native';
 var window = Dimensions.get('window');
 import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar , Title , Caption , Icon } from '@shoutem/ui';
- class Groom extends Component {
+ class TimeLine extends Component {
   render() {
     return (
       <Screen>
@@ -29,4 +29,4 @@ import { Screen , ScrollView , ImageBackground , Tile , Overlay , NavigationBar 
     )
   }
 }
-export default Groom;
+export default TimeLine;
